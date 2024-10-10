@@ -1,0 +1,84 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - search_jobs
+  - job_position
+  - job_location
+  - resume_help
+  - ask_about_job_application
+
+entities:
+  - job_name
+
+slots:
+  job_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: job_name
+  job_location:
+    type: text
+    mappings:
+      - type: from_text
+
+responses:
+  utter_greet:
+    - text: "Xin chào! Tôi có thể giúp gì cho bạn trong việc tìm kiếm công việc?"
+
+  utter_goodbye:
+    - text: "Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi. Chúc bạn tìm được công việc phù hợp!"
+
+  utter_website_creator_info:
+    - text: "Website này được phát triển bởi Phạm Văn Hòa, sinh viên trường công nghệ thông tin - Đại học Cần Thơ. Bạn có thể tìm hiểu thêm thông tin chi tiết tại trang giới thiệu: http://localhost:3000/topcv-clone-introduce"
+
+  utter_ask_location:
+    - text: "Bạn muốn làm việc ở đâu? (Ví dụ: Hà Nội, TP.HCM, ...)"
+
+  utter_search_results:
+    - text: "Tôi đã tìm thấy một số công việc phù hợp với yêu cầu của bạn. Bạn có thể xem chi tiết tại đây: [URL_TÌM_KIẾM]"
+
+  utter_iamabot:
+    - text: "Tôi là một chatbot hỗ trợ tìm việc, được tạo ra để giúp bạn trong quá trình tìm kiếm công việc phù hợp."
+
+  utter_resume_help:
+    - text: "I'd be happy to help you with your resume. What specific aspect of your resume do you need assistance with?"
+
+  utter_job_application_guide:
+    - text: "Để biết thông tin chi tiết về quy trình ứng tuyển và hướng dẫn sử dụng website, bạn có thể truy cập link sau: http://localhost:3000/job-apply-process. Trang này sẽ cung cấp cho bạn các bước cụ thể để ứng tuyển công việc hiệu quả."
+
+  utter_ask_job_position:
+    - text: "Bạn muốn ứng tuyển vị trí việc làm nào?"
+
+  utter_ask_job_location:
+    - text: "Bạn muốn làm việc ở đâu?"
+      buttons:
+        - title: "Hồ Chí Minh"
+          payload: '/job_location{"job_location": "Hồ Chí Minh"}'
+        - title: "Hà Nội"
+          payload: '/job_location{"job_location": "Hà Nội"}'
+        - title: "Cần Thơ"
+          payload: '/job_location{"job_location": "Cần Thơ"}'
+        - title: "Đà Nẵng"
+          payload: '/job_location{"job_location": "Đà Nẵng"}'
+        - title: "Khác"
+          payload: '/job_location{"job_location": "Khác"}'
+
+  utter_job_search_results:
+    - text: "Tôi đã tìm thấy một số công việc phù hợp với yêu cầu của bạn. Bạn có thể xem chi tiết tại đây: http://localhost:3000/search-job?name={job_name}&location={job_location}"
+
+  utter_default:
+    - text: "Rất tiếc, bot chưa được hướng dẫn để trả lời câu hỏi của bạn."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - utter_resume_help

@@ -1,0 +1,29 @@
+version: "3.1"
+
+stories:
+  - story: job search flow
+    steps:
+      - intent: search_jobs
+      - action: utter_ask_job_position
+      - intent: job_position
+        entities:
+          - job_name: $job_name
+      - slot_was_set:
+          - job_name: $job_name
+      - action: utter_ask_job_location
+      - intent: job_location
+      - slot_was_set:
+          - job_location: $job_location
+      - action: utter_job_search_results
+
+  - story: resume help flow
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: resume_help
+      - action: utter_resume_help
+
+  - story: bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot

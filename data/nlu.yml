@@ -1,0 +1,143 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - Xin chào
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - Tạm biệt
+      - bye bye
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - Bạn là người?
+      - Bạn là bot?
+      - Bạn là ai?
+      - Bạn có phải người không?
+      - Bạn có phải bot không?
+
+  - intent: ask_about_website_creator
+    examples: |
+      - Ai là người làm ra website này?
+      - Ai tạo ra trang web này?
+      - Website này do ai phát triển?
+      - Người phát triển trang web này là ai?
+      - Công ty nào tạo ra website này?
+      - Thông tin về người tạo website
+      - Cho tôi biết về người làm website này
+
+  - intent: ask_about_job_application
+    examples: |
+      - Tôi muốn ứng tuyển việc làm
+      - Hướng dẫn sử dụng website
+      - Hướng dẫn ứng tuyển
+      - Làm thế nào để ứng tuyển công việc?
+      - Quy trình ứng tuyển như thế nào?
+      - Cách sử dụng website để tìm việc
+      - Tôi cần hướng dẫn về cách ứng tuyển
+
+  - intent: search_jobs
+    examples: |
+      - Tôi muốn tìm việc làm
+      - Có công việc nào phù hợp với tôi không?
+      - Tìm kiếm cơ hội việc làm
+      - Giúp tôi tìm một công việc mới
+      - Tôi đang tìm kiếm việc làm
+      - Có việc làm nào cho tôi không?
+      - Tôi cần một công việc mới
+      - Tìm việc
+      - Tìm công việc
+      - Xem danh sách việc làm
+
+  - intent: job_position
+    examples: |
+      - [fullstack](job_name)
+      - [frontend developer](job_name)
+      - [backend developer](job_name)
+      - [data scientist](job_name)
+      - [software engineer](job_name)
+      - Tôi muốn ứng tuyển vị trí [fullstack](job_name)
+      - Tôi đang tìm công việc [frontend developer](job_name)
+      - [backend developer](job_name)
+      - Vị trí [data scientist](job_name)
+      - [software engineer](job_name)
+      - [marketing](job_name)
+      - [kế toán](job_name)
+      - [nhân viên bán hàng](job_name)
+      - [quản lý dự án](job_name)
+      - Tôi muốn làm [giáo viên](job_name)
+      - [kỹ sư cơ khí](job_name)
+      - Tôi đang tìm việc [thiết kế đồ họa](job_name)
+      - [nhân viên hành chính](job_name)
+      - [chuyên viên tư vấn](job_name)
+      - Tôi muốn làm [](job_name)
+      - Tôi đang tìm việc [](job_name)
+      - Công việc [](job_name)
+
+  - intent: job_location
+    examples: |
+      - Hồ Chí Minh
+      - Hà Nội
+      - Cần Thơ
+      - Đà Nẵng
+      - Khác
